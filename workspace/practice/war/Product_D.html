@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='style.css'/>
+	<script src='script.js'></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class='container'>
+    
+    <div class='modal' id='modal-box'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+            	<form class='form-horizontal' action='/product_D' id='subform' method='post'>
+                	<div class='modal-header'>
+                		<button type="button" class="close" data-dismiss="modal">&times;</button>                     
+                		<h4>Enter Your Issue Details</h4> 
+                    </div>
+                	<div class='modal-body'>
+                		<div class='form-group'>
+                			<label for='begin time' class='control-label col-sm-3'>Begin Time&nbsp;&nbsp;&nbsp;:</label>
+                			
+                			<div class='col-sm-2'>
+                				<input type='text' class='form-control' id='begin time' placeholder='Hrs' name='Begin_hrs'>
+                			</div>
+                
+                			<div class='col-sm-2'>
+                				<input type='text' class='form-control' id='begin time' placeholder='mins' name='Begin_mins'>
+                			</div>
+                		</div>
+                		<div class='form-group'>
+                			<label for='end time' class='control-label col-sm-3'>End Time&nbsp;&nbsp;&nbsp;:</label>
+                			
+                			<div class='col-sm-2'>
+                				<input type='text' class='form-control' id='end time' placeholder='Hrs' name='End_hrs' >
+                			</div>
+                			
+                			<div class='col-sm-2'>
+                				<input type='text' class='form-control' id='end time' placeholder='mins' name='End_mins'>
+                			</div>
+                		</div>
+                		<div class='form-group'>
+                			<label for='title1' class='control-label col-sm-3'>Title&nbsp;&nbsp;&nbsp;:</label>
+                			
+                			<div class='col-sm-8'>
+                				<input type='text' class='form-control' id='title1' placeholder='title' name='Title' >
+                			</div>
+                		</div>
+                		<div class='form-group'>
+                			<label for='description1' class='control-label col-sm-3'>Description&nbsp;&nbsp;&nbsp;:</label>
+                			
+                			<div class='col-sm-8'>
+                				<textarea class='form-control' rows='3' id='description1' placeholder='give precise description about issue' name='Description'></textarea>
+                			</div>
+                		</div>
+                		<div class='form-group'>
+                			<div class='col-sm-12 col-sm-offset-4'>
+                				<label class='radio'><input type="radio" name='issue' value='service disruption' checked>service disruption</input></label>
+                			</div>
+                			<div class='col-sm-12 col-sm-offset-4'>
+                				<label class='radio'><input type="radio" name='issue' value='service outage'>service outage</input></label>
+                			</div>
+                		</div>
+                	</div>
+                	<div class='modal-footer'>
+                	<button type='submit' class="btn btn-success" id='sub'>submit</button>
+                	<button type='button' class="btn btn-danger" data-dismiss='modal'>cancel</button>
+                	</div>
+            	</form>       
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(
+    function()
+    {
+    $("#modal-box").modal({backdrop:true});
+    /* $('#sub').on('submit',function()
+    		{
+    	
+    	$.ajax({
+ 			 url:$("#form1").attr('action'),
+    	     type:$("#form1").attr('method'),
+    	     data: $("#form1").formserialize(),
+    	     success: function (data) {
+    	           
+    	    						   }
+    		 });    	
+    		});
+     */ }
+    
+);
+</script>
+</body>
+</html>
