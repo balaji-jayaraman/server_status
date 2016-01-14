@@ -57,15 +57,15 @@ body{
     /* section 4 */
 .section_4{
     margin-left:175px;
-    padding-top:20px;
+    padding-top:70px;
     border:1px;
     width:500px;
-    height:100px
+    height:auto;
 }
 	/* section 5 */
 .section_5{
 	margin-left:175px;
-    margin-top:200px;
+    margin-top:140px;
 }
 	/*section 6 */
 .section_6{

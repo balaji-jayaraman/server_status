@@ -1,15 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>schedule issue</title>
-	<link rel='stylesheet' href='style.css'/>
-
-     
+	<link rel='stylesheet' href='style.css'/> 
+<link rel='stylesheet' href='/bootstrap-clockpicker.min.css'/>
+     <link rel='stylesheet' href='/jquery-clockpicker.min.css'/>
+      <link rel='stylesheet' href='standalone.css'/>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 	 
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="/bootstrap-clockpicker.min.js" type="text/javascript"></script>
+    <script src="/jquery-clockpicker.min.js" type="text/javascript"></script>
    <script src="javascript2.js" type="text/javascript"></script>
 
 </head>
@@ -17,10 +22,10 @@
 <!--first layer-->
 <div class="section_1">
     <div class="child_1_1">
-        <img src="http://www.clker.com/cliparts/V/U/W/u/I/l/green-cloud-icon-md.png" height=80px/>
+        <img src="/logo.png" height=80px width=80px style="padding-top:10px;padding-bottom:10px;"/>
     </div>
     <div class="child_1_2">
-        <font color='#606060'>Scrum Cloud Platform</font>
+        <font color='#606060'>Full Cloud Platform</font>
     </div>
 </div>
 <!--second layer-->
@@ -30,22 +35,22 @@
 </div>
 <!--third layer-->
 <div class="section_3">
-        <div class="child_3_1">Scrum Cloud Status</div>
-        <div class="child_3_2">This page provides status information on the services that are part of the Scrum Cloud Platform. Check here to view the current status of the services listed below.</div>
+        <div class="child_3_1">FUll Cloud Status</div>
+        <div class="child_3_2">This page provides status information on the services that are part of the FUll Cloud Platform. Check here to view the current status of the services listed below.</div>
 </div>
 <!--fourth layer-->
 <div class="section_4">
     <table border=0 height=250px width=920px>
     	<tr>
     		<td class='month heading' id='month'></td>
-    		<td class='heading' id='91'>4</td>
-    		<td class='heading' id='92'>5</td>
-    		<td class='heading' id='93'>6</td>
-    		<td class='heading' id='94'>7</td>
-    		<td class='heading' id='95'>8</td>
-    		<td class='heading' id='96'>9</td>
-    		<td class='heading' id='97'>10</td>
-    		<td class='heading' id='98'>11</td>
+    		<td class='heading' id='91'>6</td>
+    		<td class='heading' id='92'>7</td>
+    		<td class='heading' id='93'>8</td>
+    		<td class='heading' id='94'>9</td>
+    		<td class='heading' id='95'>10</td>
+    		<td class='heading' id='96'>11</td>
+    		<td class='heading' id='97'>12</td>
+    		<td class='heading' id='98'>13</td>
     		<td class='heading' id='today'></td>
     	</tr>
         <tr>
@@ -99,14 +104,14 @@
         </tr>
         <tr>
     		<td class='month heading'></td>
-    		<td class='heading'>4</td>
-    		<td class='heading'>5</td>
     		<td class='heading'>6</td>
     		<td class='heading'>7</td>
     		<td class='heading'>8</td>
     		<td class='heading'>9</td>
     		<td class='heading'>10</td>
     		<td class='heading'>11</td>
+    		<td class='heading'>12</td>
+    		<td class='heading'>13</td>
     		<td class='heading' id='today'></td>
     	</tr>
         
@@ -159,23 +164,27 @@
                 		<div class='form-group'>
                 			<label for='begin time' class='control-label col-sm-3'>Begin Time&nbsp;&nbsp;&nbsp;:</label>
                 			
-                			<div class='col-sm-2'>
-                				<input type='text' class='form-control' id='begin time' placeholder='Hrs' name='Begin_hrs' required>
+                			<div class='col-sm-4'>
+                					<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+    										<input type="text" class="form-control" name='Begin_time' required>
+    										<span class="input-group-addon">
+       											 <span class="glyphicon glyphicon-time"></span>
+   											 </span>
+									</div>		
                 			</div>
                 
-                			<div class='col-sm-2'>
-                				<input type='text' class='form-control' id='begin time' placeholder='mins' name='Begin_mins' required>
-                			</div>
+                			
                 		</div>
                 		<div class='form-group'>
                 			<label for='end time' class='control-label col-sm-3'>End Time&nbsp;&nbsp;&nbsp;:</label>
                 			
-                			<div class='col-sm-2'>
-                				<input type='text' class='form-control' id='end time' placeholder='Hrs' name='End_hrs' required>
-                			</div>
-                			
-                			<div class='col-sm-2'>
-                				<input type='text' class='form-control' id='end time' placeholder='mins' name='End_mins' required>
+                			<div class='col-sm-4'>
+                						<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+    										<input type="text" class="form-control" name='End_time' required>
+    										<span class="input-group-addon">
+       											 <span class="glyphicon glyphicon-time"></span>
+   											</span>
+									</div>		
                 			</div>
                 		</div>
                 		

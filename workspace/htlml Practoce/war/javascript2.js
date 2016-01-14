@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$('.clockpicker').clockpicker();
 	var d = new Date();
 	$(".child_2_1").html(d.toDateString());
 	var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -68,25 +68,18 @@ function validate(A)
 	$(".btn-success").click(function(){
 		
 		
-		var Begin_hrs = $("[name='Begin_hrs']").val();
-		var Begin_mins = $("[name='Begin_mins']").val();
-		var End_hrs = $("[name='End_hrs']").val();
-		var End_mins = $("[name='End_mins']").val();
 		// variable declare
-		var begin_Time=Begin_hrs+':'+Begin_mins;
-		var end_Time=End_hrs+':'+End_mins;
+		var begin_Time=$("[name='Begin_time']").val();
+		alert(begin_Time);
+		var end_Time=$("[name='End_time']").val();
 		var title = $("[name='Title']").val();
 		var description = $("[name='Description']").val();
 		var issueType = $("[name='issue']:checked" ).val();
-		 if (Begin_hrs == null || Begin_hrs == "" || Begin_mins == null || Begin_mins == "" || End_hrs == null || End_hrs == "" || End_mins == null || End_mins == "" || title == null || title == "" || description == null || description == ""   ) {
+		 if (begin_Time == null || begin_Time == "" || end_Time == null || end_Time == ""  || title == null || title == "" || description == null || description == ""   ) {
 		        alert("Field must be filled out");
 		        return false;
 		    }
-		 if(Begin_hrs>23 || Begin_mins>59 || End_hrs>23 || End_mins>59  )
-			 {
-			 alert("enter proper Time");
-			 return false;
-			 }
+		
 		 
 		$.ajax({
 			type : "POST",

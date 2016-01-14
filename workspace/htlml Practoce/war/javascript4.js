@@ -4,6 +4,12 @@ $(document).ready(function(){
 	$(".child_2_1").html(d.toDateString());
 	var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
 	$(".month").html(months[d.getMonth()]);
+	$("#99").html(d.getDate());
+	/* for(var y=91;y<100;y++)
+		{
+	var day=$('#'+i).text();
+	alert(test);
+		} */
 	$.ajax({
 		type : "POST",
 		url : "/retrieve2",
@@ -20,6 +26,8 @@ $(document).ready(function(){
 																{
 																var issuesymbol='red';
 																}
+															
+															
 															if(data.id!=null)
 																{
 																	var id=data.id;
@@ -31,4 +39,3 @@ $(document).ready(function(){
 		});
 
 });
-

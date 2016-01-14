@@ -33,7 +33,15 @@ import com.Datastore.IssueDetails;
 
 @Controller
 public class Controller1 {
-
+					//welcome file
+	@RequestMapping(value="/")
+	public ModelAndView user2() 
+	{
+	
+	ModelAndView b =new ModelAndView("index");
+	return b;
+	}
+	
 		@RequestMapping(value="/user",method=RequestMethod.GET)
 		public ModelAndView user1() 
 		{
@@ -112,7 +120,7 @@ public class Controller1 {
 			req.setAttribute("dataretrieve",list);
 			
 			
-			return new ModelAndView("issue");
+			return new ModelAndView("summay");
 		}
 	
 
