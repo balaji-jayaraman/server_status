@@ -12,6 +12,31 @@ import com.google.appengine.datanucleus.query.JDOCursorHelper;
 
 public class Agent {
 	PersistenceManager pm=PMF.get().getPersistenceManager();
+	
+	//client emailid storage
+	public void adduser(String email)
+	{
+		UserDetails u=new UserDetails();
+		u.setClients(email);
+		try
+		{
+			pm.makePersistent(u);
+		}
+		finally{
+			pm.close();
+		}
+	}
+	public List<UserDetails> retrieve_user() throws IOException
+	{
+		Query q = pm.newQuery(UserDetails.class);
+	
+		List<UserDetails> results = (List<UserDetails>) q.execute();
+
+		 
+		return results;
+	}
+
+	
 			//admin view
 	public void save(IssueDetails set)
 	{
@@ -24,6 +49,8 @@ public class Agent {
 		store.setTitle(set.getTitle());
 		store.setDescription(set.getDescription());
 		store.setIssueType(set.getIssueType());
+		store.setAdminName(set.getAdminName());
+		store.setEmailnotification(set.getEmailnotification());
 		try
 		{
 			pm.makePersistent(store);

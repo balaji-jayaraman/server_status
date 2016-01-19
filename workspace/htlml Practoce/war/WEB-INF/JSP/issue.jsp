@@ -40,14 +40,14 @@
 <!-- fourth layer -->
 <div class="section_4">
 						
-		<table height='100' width='800px' RULES='ROWS' style="margin-left:10px;" cellpadding="-10px">
+		<table height='100' width='750px' RULES='ROWS' style="margin-left:10px;" cellpadding="-10px">
 								<tr>
 									<th style='padding-left: 0px;'>Date</th>
 									<th>Begin Time</th>
 									<th>End Time</th>
 									<th>Title</th>
 									<th>Description</th>
-									<th>Product</th>
+									
 								</tr>
 								<%
 								List<IssueDetails> a=(List<IssueDetails>)request.getAttribute("dataretrieve");
@@ -58,7 +58,7 @@
 								out.print("<td>"+p.getEnd_Time()+"</td>");
 								out.print("<td>"+p.getTitle()+"</td>");
 								out.print("<td>"+p.getDescription()+"</td>");
-								out.print("<td>"+p.getProductNo()+"</td></tr>");
+								
 								}
 								%>
 		</table>

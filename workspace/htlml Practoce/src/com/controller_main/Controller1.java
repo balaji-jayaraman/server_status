@@ -9,8 +9,14 @@ import java.util.List;
 
 
 
+
+
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
+
 
 
 
@@ -23,10 +29,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.Datastore.Agent;
 import com.Datastore.IssueDetails;
+import com.Datastore.MailSend;
 
 
 
@@ -34,15 +42,22 @@ import com.Datastore.IssueDetails;
 @Controller
 public class Controller1 {
 					//welcome file
-	@RequestMapping(value="/")
+	@RequestMapping(value="/admin")
 	public ModelAndView user2() 
 	{
 	
-	ModelAndView b =new ModelAndView("index");
+	ModelAndView b =new ModelAndView("login");
+	return b;
+	}
+	@RequestMapping(value="/schedule")
+	public ModelAndView schedule() 
+	{
+	
+	ModelAndView b =new ModelAndView("schedule");
 	return b;
 	}
 	
-		@RequestMapping(value="/user",method=RequestMethod.GET)
+		@RequestMapping(value="/",method=RequestMethod.GET)
 		public ModelAndView user1() 
 		{
 		
@@ -56,6 +71,13 @@ public class Controller1 {
 		{
 			Agent a=new Agent();
 			a.save(store);
+			String emailcheck=store.getEmailnotification();
+			if((emailcheck)!=null)
+			{
+				MailSend a2=new MailSend();
+				a2.send(store.getProductNo(),store.getIssueDate(), store.getBegin_Time(), store.getEnd_Time(), store.getTitle(), store.getDescription());
+				
+			}
 			res.getWriter().write("successful");
 	
 		}
@@ -120,9 +142,26 @@ public class Controller1 {
 			req.setAttribute("dataretrieve",list);
 			
 			
-			return new ModelAndView("summay");
+			return new ModelAndView("summary");
 		}
 	
-
+						//store email
+		@RequestMapping(value="/adduser")
+		public ModelAndView adduser()
+		{
+			
+			return new ModelAndView("AddUser");
+		}
+		
+		@RequestMapping(value="/storeuser",method={RequestMethod.POST})
+		public void storeuser(@RequestParam("user") String user,HttpServletResponse res) throws IOException
+		{
+			
+			Agent n=new Agent();
+			n.adduser(user);
+			res.getWriter().write("successfully stored");
+			
+		}
+		
 
 }

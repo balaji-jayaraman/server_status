@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import='com.google.appengine.api.users.UserServiceFactory,com.google.appengine.api.users.UserService,javax.servlet.http.*,javax.servlet.ServletException' %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,21 @@
     </div>
     <div class="child_1_2">
         <font color='#606060'>Full Cloud Platform</font>
+    </div>
+    <div style='float:right;'>
+    	<div>Hi,</div>
+    	<div id='username'><%String user=(String)session.getAttribute("user");
+    	out.print(user); %></div>
+    	<div>
+    				<%UserService userService = UserServiceFactory.getUserService();
+    				
+    				if (request.getUserPrincipal() != null) {
+    				out.println("<a href=\"" +
+                            userService.createLogoutURL("/admin") +
+                            "\">sign out</a>");
+    				}%>
+    	</div>
+    			
     </div>
 </div>
 <!--second layer-->
@@ -208,6 +224,11 @@
                 			</div>
                 			<div class='col-sm-12 col-sm-offset-4'>
                 				<label class='radio'><input type="radio" name='issue' value='service outage'>service outage</input></label>
+                			</div>
+                		</div>
+                		<div class='form-group'>
+                			<div style='margin-left:40px;'>
+                				<label><input type="checkbox" name='email' value='Send'>Send Email</input></label>
                 			</div>
                 		</div>
                 	</div>

@@ -37,8 +37,20 @@ public class IssueDetails {
 	@Persistent 
 	private String IssueType;
 	
+	@Persistent 
+	private String  AdminName;
+
 	
+	public String emailnotification;
+
 	
+	public String getEmailnotification() {
+		return emailnotification;
+	}
+
+	public void setEmailnotification(String emailnotification) {
+		this.emailnotification = emailnotification;
+	}
 
 	public String getProductNo() {
 		return ProductNo;
@@ -103,6 +115,14 @@ public class IssueDetails {
 	public void setIssueType(String issueType) {
 		IssueType = issueType;
 	}
+	public String getAdminName() {
+		return AdminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.AdminName = adminName;
+	}
+
 
 	@Override
 	public String toString() {
