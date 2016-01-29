@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import="com.Datastore.IssueDetails" %>
- <%@page import='java.util.List' %>
+ <%@ page import="com.Datastore.IssueDetails,com.PMF_config.DateClass" %>
+ <%@page import='java.util.List,java.util.Date' %>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,7 +9,7 @@
 <head>
 <title>summary description</title>
 	
-<link rel='stylesheet' href='../../issuestyle1.css'/>
+<link rel='stylesheet' href='../../summarjsp.css'/>
 	
 	 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
 	 
@@ -37,29 +37,94 @@
         <div class="child_3_1">Full Cloud Status</div>
         <div class="child_3_2">This page provides status information on the services that are part of the Full Cloud Platform. Check here to view the current status of the services listed below.</div>
 </div>
+<!-- past incident layer -->
+<div class='child_3_1'>
+	Past 10 days incidents
+</div>
 <!-- fourth layer -->
 <div class="section_4">
 						
-		<table height='auto' width='800px' RULES='ROWS' style="margin-left:10px;" cellpadding="-10px">
-								<tr>
-									<th style='padding-left: 0px;'>Date</th>
-									<th>Begin Time</th>
-									<th>End Time</th>
-									<th>Title</th>
-									<th>Description</th>
-									<th>Product</th>
-								</tr>
+		<table height='auto' width='auto'  style="margin-left:0px;" cellpadding="-10px">
+								
 								<%
+								/* DateClass.dodate(5); */
+							
+        				
 								List<IssueDetails> a=(List<IssueDetails>)request.getAttribute("dataretrieve");
-								for(IssueDetails p:a)
+								
+								int i=1;
+							while(i<=10)
+							{
+								int count=0;
+									for(IssueDetails p:a)
+									{
+										if((DateClass.dodate(i)).equals(p.getIssueDate()))
+						       			{
+						       				count++;
+						       				System.out.println(count+" "+DateClass.dodate(i));
+						       			
+						       			}
+										
+									}
+									if(count>1)
+									{
+										out.print("<tr class='horozontal'><th>"+DateClass.dodate(i)+"</th></tr>");	
+									}
+									if(count==0)
+									{
+										out.print("<tr class='horozontal'><th>"+DateClass.dodate(i)+"</th></tr>");	
+										out.print("<tr><td>No incident reported</td></tr><tr><td>&nbsp;</td></tr>");
+									}
+						  				
+						       		for(IssueDetails p1:a)
+						       		{	
+												if((DateClass.dodate(i)).equals(p1.getIssueDate()))
+								       			{
+													if(count==1)
+													{
+														out.print("<tr class='horozontal'><th>"+p1.getIssueDate()+"</th></tr>");
+										       			out.print("<tr><td>"+p1.getProductNo()+"</td><td style='padding-left: 10px;'>begin time</td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getBegin_Time()+"</td></tr>");
+										       		
+										       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>End time </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getEnd_Time()+"</td></tr>");
+										       		
+										       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>Title </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getTitle()+"</td></tr>");
+										       		
+										       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>Description </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getDescription()+"</td></tr><tr><td>&nbsp;</td></tr>"); 
+										       			
+													}
+													 if(count>1)
+													{
+														out.print("<tr><td>"+p1.getProductNo()+"</td><td style='padding-left: 10px;'>begin time</td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getBegin_Time()+"</td></tr>");
+											       		
+											       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>End time </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getEnd_Time()+"</td></tr>");
+										       		
+										       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>Title </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getTitle()+"</td></tr>");
+										       		
+										       		
+										       			out.print("<tr><td></td><td style='padding-left: 10px;'>Description </td><td style='padding-left: 10px;'>:</td><td style='padding-left: 10px;'>"+p1.getDescription()+"</td></tr><tr><td>&nbsp;</td></tr>"); 
+										       			
+													}
+								       			}
+									}
+									
+									
+									
+							i++;
+							}
+								/* for(IssueDetails p:a)
 								{
 								out.print("<tr><td style='padding-left: 0px;'>"+p.getIssueDate()+"</td>");
-								out.print("<td>"+p.getBegin_Time()+"</td>");
-								out.print("<td>"+p.getEnd_Time()+"</td>");
-								out.print("<td>"+p.getTitle()+"</td>");
-								out.print("<td>"+p.getDescription()+"</td>");
-								out.print("<td>"+p.getProductNo()+"</td></tr>");
-								}
+								out.print("<td style='padding-left: 10px;'>"+p.getBegin_Time()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getEnd_Time()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getTitle()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getDescription()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getProductNo()+"</td></tr>");
+								} */
 								%>
 		</table>
 </div>

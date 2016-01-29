@@ -110,7 +110,7 @@ public class Controller1 {
 			List<IssueDetails> list=(List<IssueDetails>)a.retrieve2(); 
 			ObjectMapper mapp=new ObjectMapper();
 			String send=mapp.writeValueAsString(list);
-			
+		
 			res.setContentType("application/json");
 			res.setCharacterEncoding("UTF-8");
 			res.getWriter().write(send.toString());
@@ -161,6 +161,41 @@ public class Controller1 {
 			n.adduser(user);
 			res.getWriter().write("successfully stored");
 			
+		}
+		
+		
+							//dynamic data generation
+		@RequestMapping(value="/model_issue/{id}",method={RequestMethod.POST})
+		public void fetch2(@PathVariable("id") String id1,HttpServletResponse res) throws IOException
+		{
+			
+			Agent a1=new Agent();
+			List<IssueDetails> list=(List<IssueDetails>)a1.filteration(id1); 
+			ObjectMapper mapp=new ObjectMapper();
+			String send=mapp.writeValueAsString(list);
+			
+			res.setContentType("application/json");
+			res.setCharacterEncoding("UTF-8");
+			res.getWriter().write(send.toString());
+		
+			
+	
+		}
+		
+		
+							//deleting data
+		@RequestMapping(value="/delete/{id}",method={RequestMethod.POST})
+		public void delete(@PathVariable("id") String id1,HttpServletResponse res) throws IOException
+		{
+			long key=Long.parseLong(id1);
+			Agent a1=new Agent();
+			a1.dodelete(key);
+			res.setContentType("html/text");
+			res.setCharacterEncoding("UTF-8");
+			res.getWriter().write("successfully deleted");
+		
+			
+	
 		}
 		
 

@@ -43,10 +43,10 @@
 		<table height='100' width='750px' RULES='ROWS' style="margin-left:10px;" cellpadding="-10px">
 								<tr>
 									<th style='padding-left: 0px;'>Date</th>
-									<th>Begin Time</th>
-									<th>End Time</th>
-									<th>Title</th>
-									<th>Description</th>
+									<th style='padding-left: 10px;'>Begin Time</th>
+									<th style='padding-left: 10px;'>End Time</th>
+									<th style='padding-left: 10px;'>Title</th>
+									<th style='padding-left: 10px;'>Description</th>
 									
 								</tr>
 								<%
@@ -54,10 +54,10 @@
 								for(IssueDetails p:a)
 								{
 								out.print("<tr><td style='padding-left: 0px;'>"+p.getIssueDate()+"</td>");
-								out.print("<td>"+p.getBegin_Time()+"</td>");
-								out.print("<td>"+p.getEnd_Time()+"</td>");
-								out.print("<td>"+p.getTitle()+"</td>");
-								out.print("<td>"+p.getDescription()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getBegin_Time()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getEnd_Time()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getTitle()+"</td>");
+								out.print("<td style='padding-left: 10px;'>"+p.getDescription()+"</td>");
 								
 								}
 								%>

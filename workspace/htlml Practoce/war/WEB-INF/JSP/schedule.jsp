@@ -56,18 +56,18 @@
 </div>
 <!--fourth layer-->
 <div class="section_4">
-    <table border=0 height=250px width=920px>
+    <table border=1 height=250px width=920px RULES='COLS' FRAME='void' BORDERCOLOR='#eee'>
     	<tr>
     		<td class='month heading' id='month'></td>
-    		<td class='heading' id='91'>6</td>
-    		<td class='heading' id='92'>7</td>
-    		<td class='heading' id='93'>8</td>
-    		<td class='heading' id='94'>9</td>
-    		<td class='heading' id='95'>10</td>
-    		<td class='heading' id='96'>11</td>
-    		<td class='heading' id='97'>12</td>
-    		<td class='heading' id='98'>13</td>
-    		<td class='heading' id='today'></td>
+    		<td class='heading' id='91'></td>
+    		<td class='heading' id='92'></td>
+    		<td class='heading' id='93'></td>
+    		<td class='heading' id='94'></td>
+    		<td class='heading' id='95' style='color:red;'></td>
+    		<td class='heading' id='96'></td>
+    		<td class='heading' id='97'></td>
+    		<td class='heading' id='98'></td>
+    		<td class='heading' id='99'></td>
     	</tr>
         <tr>
         	<td width='87px'>Product A</td>
@@ -79,7 +79,7 @@
             <td class='Product A' onclick="validate(this);"><div class=' cement' style='width:100%;height:100%;' data-target='#myModal' id='106'>schedule</div></td>
         	<td class='Product A' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='107'>schedule</div></td>
         	<td class='Product A' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='108'>schedule</div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='Product A' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='109'>schedule</div></td>
         </tr>
         <tr>
         	<td width='87px'>Product B</td>
@@ -91,7 +91,7 @@
             <td class='Product B' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='116'>schedule</div></td>
         	<td class='Product B' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='117'>schedule</div></td>
         	<td class='Product B' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='118'>schedule</div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='Product B' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='119'>schedule</div></td>
         </tr>
           <tr>
           	<td width='87px'>Product C</td>
@@ -103,7 +103,7 @@
             <td class='Product C' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='126'>schedule</div></td>
         	<td class='Product C' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='127'>schedule</div></td>
         	<td class='Product C' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='128'>schedule</div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='Product C' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='129'>schedule</div></td>
         </tr>
           <tr>
           	<td width='87px'>Product D</td>
@@ -115,20 +115,11 @@
         	<td class='Product D' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='136'>schedule</div></td>
         	<td class='Product D' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='137'>schedule</div></td>
         	<td class='Product D' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='138'>schedule</div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='Product D' onclick="validate(this);"><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='139'>schedule</div></td>
         	  		
         </tr>
         <tr>
-    		<td class='month heading'></td>
-    		<td class='heading'>6</td>
-    		<td class='heading'>7</td>
-    		<td class='heading'>8</td>
-    		<td class='heading'>9</td>
-    		<td class='heading'>10</td>
-    		<td class='heading'>11</td>
-    		<td class='heading'>12</td>
-    		<td class='heading'>13</td>
-    		<td class='heading' id='today'></td>
+    		
     	</tr>
         
     </table>
@@ -181,8 +172,8 @@
                 			<label for='begin time' class='control-label col-sm-3'>Begin Time&nbsp;&nbsp;&nbsp;:</label>
                 			
                 			<div class='col-sm-4'>
-                					<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-    										<input type="text" class="form-control" name='Begin_time' required>
+                					<div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
+    										<input type="text" class="form-control" name='Begin_time' placeholder='pick time' required>
     										<span class="input-group-addon">
        											 <span class="glyphicon glyphicon-time"></span>
    											 </span>
@@ -195,8 +186,8 @@
                 			<label for='end time' class='control-label col-sm-3'>End Time&nbsp;&nbsp;&nbsp;:</label>
                 			
                 			<div class='col-sm-4'>
-                						<div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
-    										<input type="text" class="form-control" name='End_time' required>
+                						<div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
+    										<input type="text" class="form-control" name='End_time' placeholder='pick time' required>
     										<span class="input-group-addon">
        											 <span class="glyphicon glyphicon-time"></span>
    											</span>
@@ -243,6 +234,38 @@
 </div>
 
 
+									<!-- update model -->
+									
+									
+ <div class='container'>
+    <div id='update' class="modal fade" role="dialog">
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+            	<form class='form-horizontal'  id='subform' method='post'>
+                	<div class='modal-header'>
+                		<button type="button" class="close" data-dismiss="modal" onclick="doreload();">&times;</button>                     
+                		<h4>updating issue</h4> 
+                    </div>
+                	<div class='modal-body'>
+                		<table id='new_update' style='margin-left:20px;' RULES='ROWS'>
+                			<!-- <tr><th>Date</th>
+                				<th style='padding-left:10px;'>Begin time</th>
+                				<th style='padding-left:10px;'>End time</th>
+                				<th style='padding-left:10px;'>Title</th>
+                			</tr> -->
+                		
+                		</table>
+                		        		
+                	</div>
+                	<div class='modal-footer' id='dynamic_footer'>
+                	
+                	
+                	</div>
+            	</form>       
+            </div>
+        </div>
+  </div>
+</div>
 
 
 

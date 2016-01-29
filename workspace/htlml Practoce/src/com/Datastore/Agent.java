@@ -5,6 +5,8 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+
+
 import com.PMF_config.*;
 import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.datanucleus.query.JDOCursorHelper;
@@ -107,5 +109,20 @@ public class Agent {
 			
 
 	}
+	
+							//deleting data
+	public void dodelete(long id)
+	{
+		
+			IssueDetails d=pm.getObjectById(IssueDetails.class, id);
+			try{
+			  pm.deletePersistent(d);
+			}
+			finally{
+				pm.close();
+			}
+		
+	}
+	
 
 }

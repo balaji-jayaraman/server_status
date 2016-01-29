@@ -41,15 +41,15 @@
     <table border='1' height=250px width=920px RULES='COLS' FRAME='void' BORDERCOLOR='#eee'>
     	<tr>
     		<td class='month heading' id='month'></td>
-    		<td class='heading' id='91'>6</td>
-    		<td class='heading' id='92'>7</td>
-    		<td class='heading' id='93'>8</td>
-    		<td class='heading' id='94'>9</td>
-    		<td class='heading' id='95'>10</td>
-    		<td class='heading' id='96'>11</td>
-    		<td class='heading' id='97'>12</td>
-    		<td class='heading' id='98'>13</td>
-    		<td class='heading' id='99'></td>
+    		<td class='heading' id='91'></td>
+    		<td class='heading' id='92'></td>
+    		<td class='heading' id='93'></td>
+    		<td class='heading' id='94'></td>
+    		<td class='heading' id='95'></td>
+    		<td class='heading' id='96'></td>
+    		<td class='heading' id='97'></td>
+    		<td class='heading' id='98'></td>
+    		<td class='heading' id='99' style='color:red;'></td>
     	</tr>
         <tr>
         	<td width='87px'>Product A</td>
@@ -61,7 +61,7 @@
             <td class='A1' ><div class=' cement' style='width:100%;height:100%;' data-target='#myModal' id='106'></div></td>
         	<td class='A1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='107'></div></td>
         	<td class='A1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='108'></div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='A1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='109'><span class='green'></span></div></td>
         </tr>
         <tr>
         	<td width='87px'>Product B</td>
@@ -73,7 +73,8 @@
             <td class='B1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='116'></div></td>
         	<td class='B1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='117'></div></td>
         	<td class='B1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='118'></div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='B1' ><div class='cement ' style='width:100%;height:100%;' data-target='#myModal' id='119'><span class='green'></span></div></td>
+        	
         </tr>
           <tr>
           	<td width='87px'>Product C</td>
@@ -85,7 +86,7 @@
             <td class='C1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='126'></div></td>
         	<td class='C1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='127'></div></td>
         	<td class='C1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='128'></div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='C1' ><div class='cement ' style='width:100%;height:100%;' data-target='#myModal' id='129'><span class='green'></span></div></td>
         </tr>
           <tr>
           	<td width='87px'>Product D</td>
@@ -97,20 +98,11 @@
         	<td class='D1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='136'></div></td>
         	<td class='D1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='137'></div></td>
         	<td class='D1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='138'></div></td>
-        	<td><span class='green pull-right'></span></td>
+        	<td class='D1' ><div class='cement' style='width:100%;height:100%;' data-target='#myModal' id='139'><span class='green'></span></div></td>
         	  		
         </tr>
         <tr>
-    		<td class='month heading'></td>
-    		<td class='heading'>6</td>
-    		<td class='heading'>7</td>
-    		<td class='heading'>8</td>
-    		<td class='heading'>9</td>
-    		<td class='heading'>10</td>
-    		<td class='heading'>11</td>
-    		<td class='heading'>12</td>
-    		<td class='heading'>13</td>
-    		<td class='heading' id='99'></td>
+    		
     	</tr>
         
     </table>
